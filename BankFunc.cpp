@@ -4,9 +4,9 @@
 #include <sstream>
 #include <ctime>
 
-BankSystem::BankFunc() : accountCount(0) {}
+BankFunc::BankFunc() : accountCount(0) {}
 
-void BankSystem::addAccount(Account* account) {
+void BankFunc::addAccount(Account* account) {
     if (accountCount < MAX_ACCOUNTS) {
         accounts[accountCount++] = account;
         saveAccountsToFile();
@@ -15,7 +15,7 @@ void BankSystem::addAccount(Account* account) {
     }
 }
 
-void BankSystem::updateAccount(const std::string& accountNumber, double amount, bool isCredit) {
+void BankFunc::updateAccount(const std::string& accountNumber, double amount, bool isCredit) {
     for (int i = 0; i < accountCount; i++) {
         if (accounts[i]->getAccountNumber() == accountNumber) {
             if (isCredit) {
@@ -39,7 +39,7 @@ void BankSystem::updateAccount(const std::string& accountNumber, double amount, 
     }
 }
 
-void BankSystem::generateReport(const std::string& startDate, const std::string& endDate) {
+void BankFunc::generateReport(const std::string& startDate, const std::string& endDate) {
     std::cout << "Customer Report from " << startDate << " to " << endDate << "\n";
     std::cout << "---------------------------------------------\n";
     
@@ -68,7 +68,7 @@ void BankSystem::generateReport(const std::string& startDate, const std::string&
     }
 }
 
-void BankSystem::loadAccountsFromFile() {
+void BankFunc::loadAccountsFromFile() {
     std::ifstream file("accounts.txt");
     std::string line;
     
@@ -93,7 +93,7 @@ void BankSystem::loadAccountsFromFile() {
     file.close();
 }
 
-void BankSystem::saveAccountsToFile() {
+void BankFunc::saveAccountsToFile() {
     std::ofstream file("accounts.txt");
     if (file.is_open()) {
         for (int i = 0; i < accountCount; i++) {
