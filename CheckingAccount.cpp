@@ -2,7 +2,7 @@
 #include "CheckingAccount.h"
 using namespace std;
 
-CheckingAccount::CheckingAccount(int accountNumber, string accountHolder, double balance, double transactionFee): BankAccount(accountNumber,accountHolder,balance) {
+CheckingAccount::CheckingAccount(int accountNumber, string accountHolder, double balance, double transactionFee): Account(accountNumber,accountHolder,balance) {
     this -> transactionFee = transactionFee;
 }
 
