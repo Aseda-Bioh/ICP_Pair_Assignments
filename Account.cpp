@@ -2,7 +2,7 @@
 #include "Account.h"
 using namespace std;
 
-Account::Account(int accountNumber, string firstName, string lastName, string dob, string gender, string address, int phoneContact, string email, double balance): Customer(accountNumber, firstName, lastName, dob, gender, address, phoneContact, email) {
+Account::Account(string accountNumber, string firstName, string lastName, string dob, string gender, string address, string phoneContact, string email, double balance): Customer(accountNumber, firstName, lastName, dob, gender, address, phoneContact, email) {
     if (balance >= 0.0)
     {
         this -> balance = balance;

@@ -9,7 +9,7 @@ private:
     float interestRate;
 
 public:
-    SavingsAccount(int accountNumber, string firstName, string lastName, string dob, string gender, string address, int phoneContact, string email, double balance, float interestRate);
+    SavingsAccount(string accountNumber, string firstName, string lastName, string dob, string gender, string address, string phoneContact, string email, double balance, float interestRate);
     double calculateInterest();
 };
 #endif

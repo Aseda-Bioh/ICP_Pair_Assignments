@@ -2,7 +2,7 @@
 #include "SavingsAccount.h"
 using namespace std;
 
-SavingsAccount::SavingsAccount(int accountNumber, string firstName, string lastName, string dob, string gender, string address, int phoneContact, string email, double balance, float interestRate): Account(accountNumber, firstName, lastName, dob, gender, address, phoneContact, email, balance) {
+SavingsAccount::SavingsAccount(string accountNumber, string firstName, string lastName, string dob, string gender, string address, string phoneContact, string email, double balance, float interestRate): Account(accountNumber, firstName, lastName, dob, gender, address, phoneContact, email, balance) {
     this -> interestRate = interestRate;
 }
 
