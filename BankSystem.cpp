@@ -7,12 +7,11 @@
 using namespace std;
 
 const int MAX_CUSTOMERS = 100;
-class BankSystem{
-private:
+int main(){
   Customer* customers[MAX_CUSTOMERS];
   int customerCount;
-  std::string customerFile = "customers.txt";
-  std::string transactionFile = "transactions.txt";
+  string customerFile = "customers.txt";
+  string transactionFile = "transactions.txt";
 
 
 
