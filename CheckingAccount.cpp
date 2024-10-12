@@ -18,8 +18,8 @@ void CheckingAccount::deposit(double amount) {
 void CheckingAccount::withdraw(double amount) {
     if (getBalance() - amount >= 0)
     {
-        BankAccount::withdraw(amount);
-        BankAccount::withdraw(transactionFee);
+        Account::withdraw(amount);
+        Account::withdraw(transactionFee);
     }
 
     else {
