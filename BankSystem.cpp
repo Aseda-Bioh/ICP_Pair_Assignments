@@ -4,6 +4,7 @@
 #include <fstream>
 #include "SavingsAccount.h"
 #include "CheckingAccount.h"
+#include "BankFunc.h"
 #ifndef BANKSYSTEM_CPP
 #define BANKSYSTEM_CPP
 using namespace std;
@@ -15,6 +16,7 @@ int main(){
   int customerCount;
   string customerFile = "customers.txt";
   string transactionFile = "transactions.txt";
+  BankFunc bankfunction;
 
   Customer customer1("04245648299934", "Joseph", "Chuku", "1980-08-18","Male", "WR-899-213", "05040209912", "chuku@gmail.com");
   Account account("04245648299934", "Joseph", "Chuku", "1980-08-18","Male", "WR-899-213", "05040209912", "chuku@gmail.com", 5000.00);
@@ -61,6 +63,22 @@ int main(){
 
   checkingAccount.debit(300.00);
 
-  cout << "Your account was debited. You were charged Ghc " << checkingAccount.getTransactionFee() << " for this transaction, and your new balance is Ghc " << checkingAccount.getBalance() <<endl; 
+  cout << "Your account was debited. You were charged Ghc " << checkingAccount.getTransactionFee() << " for this transaction, and your new balance is Ghc " << checkingAccount.getBalance() <<endl;
+
+  bankfunction.loadAccountsFromFile();
+  // Add a new account
+  Account* newAccount = new Account("12345", "John", "Doe", "1990-01-01", "Male", "123 Main St", "555-1234", "john@example.com", 1000.0);
+  bankfunction.addAccount(newAccount);
+    
+    // Perform some transactions
+  bankfunction.updateAccount("12345", 500.0, true);  // Credit $500
+  bankfunction.updateAccount("12345", 200.0, false);  // Debit $200
+    
+    // Generate a report
+  bankfunction.generateReport("2023-01-01", "2023-12-31");
+    
+  return 0;
 }
 #endif
+
+
