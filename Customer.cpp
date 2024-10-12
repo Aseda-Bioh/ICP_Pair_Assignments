@@ -1,5 +1,7 @@
 #include<iostream>
 #include "Customer.h"
+#ifndef CUSTOMER_CPP
+#define CUSTOMER_CPP
 using namespace std;
 
 Customer::Customer(string accountNumber, string firstName, string lastName, string dob, string gender, string address, string phoneContact, string email) {
@@ -87,3 +89,4 @@ string Customer::getPhoneContact() {
 string Customer::getEmail() {
     return email;
 }
+#endif

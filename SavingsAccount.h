@@ -1,7 +1,7 @@
 #include<iostream>
 #include "Account.h"
-#ifndef SAVINGSACCOUNT.H
-#define SAVINGSACCOUNT.H
+#ifndef SAVINGSACCOUNT_H
+#define SAVINGSACCOUNT_H
 using namespace std;
 
 class SavingsAccount: public Account {

@@ -4,6 +4,8 @@
 #include <fstream>
 #include "SavingsAccount.h"
 #include "CheckingAccount.h"
+#ifndef BANKSYSTEM_CPP
+#define BANKSYSTEM_CPP
 using namespace std;
 
 const int MAX_CUSTOMERS = 100;
@@ -20,5 +22,7 @@ int main(){
   CheckingAccount checkingAccount("04245648299934","Joseph", "Chuku", "1980-08-18","Male", "WR-899-213", "05040209912", "chuku@gmail.com", 5000.00, 5.00);
 
   cout << "Name: " << customer1.getFirstName() << " " << customer1.getLastName() << " Account Number: " << customer1.getAccountNumber();
-  cout << "Date of birth: " << customer1.getDOB() << " " << customer1.getLastName() << "Account Number: " << customer1.getAccountNumber();
+  cout << " Date of birth: " << customer1.getDOB() << " Address: " << customer1.getAddress() << " Email: " << customer1.getEmail() << " Gender: " << customer1.getGender();
+  cout << " Phone Contact: " << customer1.getPhoneContact();
 }
+#endif

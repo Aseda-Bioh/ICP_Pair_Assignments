@@ -1,5 +1,7 @@
 #include<iostream>
 #include "Customer.h"
+#ifndef ACCOUNT_H
+#define ACCOUNT_H
 using namespace std;
 
 class Account: public Customer
@@ -13,3 +15,4 @@ public:
     bool debit(double amount);
     double getBalance();
 };
+#endif

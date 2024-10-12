@@ -1,5 +1,7 @@
 #include<iostream>
 #include "SavingsAccount.h"
+#ifndef SAVINGSACCOUNT_CPP
+#define SAVINGSACCOUNT_CPP
 using namespace std;
 
 SavingsAccount::SavingsAccount(string accountNumber, string firstName, string lastName, string dob, string gender, string address, string phoneContact, string email, double balance, float interestRate): Account(accountNumber, firstName, lastName, dob, gender, address, phoneContact, email, balance) {
@@ -7,7 +9,7 @@ SavingsAccount::SavingsAccount(string accountNumber, string firstName, string la
 }
 
 double SavingsAccount::calculateInterest() {
-    if (getBalance != 0) {
+    if (getBalance() != 0) {
         double interest = getBalance() * interestRate;
         return interest;
     }
@@ -16,3 +18,4 @@ double SavingsAccount::calculateInterest() {
         cout << "There's no money in your account.";
     }
 }
+#endif

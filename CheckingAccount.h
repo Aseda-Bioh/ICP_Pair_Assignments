@@ -1,5 +1,7 @@
 #include<iostream>
 #include "Account.h"
+#ifndef CHECKINGACCOUNT_H
+#define CHECKINGACCOUNT_H
 using namespace std;
 
 class CheckingAccount: public Account
@@ -12,3 +14,4 @@ public:
     void credit(double amount);
     void debit(double amount);
 };
+#endif

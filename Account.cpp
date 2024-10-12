@@ -1,5 +1,7 @@
 #include<iostream>
 #include "Account.h"
+#ifndef ACCOUNT_CPP
+#define ACCOUNT_CPP
 using namespace std;
 
 Account::Account(string accountNumber, string firstName, string lastName, string dob, string gender, string address, string phoneContact, string email, double balance): Customer(accountNumber, firstName, lastName, dob, gender, address, phoneContact, email) {
@@ -43,3 +45,4 @@ bool Account::debit(double amount) {
 double Account::getBalance() {
     return balance;
 }
+#endif
