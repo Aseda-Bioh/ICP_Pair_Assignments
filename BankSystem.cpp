@@ -4,3 +4,8 @@
 #include "SavingsAccount.h"
 #include "CheckingAccount.h"
 using namespace std;
+
+class BankSystem{
+
+
+}
