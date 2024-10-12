@@ -6,10 +6,10 @@ SavingsAccount::SavingsAccount(int accountNumber, string firstName, string lastN
     this -> interestRate = interestRate;
 }
 
-void SavingsAccount::interestEarned() {
+double SavingsAccount::calculateInterest() {
     if (getBalance != 0) {
-        double interest = getBalance() * interestRate * interestTimePeriod;
-        deposit(interest);
+        double interest = getBalance() * interestRate;
+        return interest;
     }
 
     else {
