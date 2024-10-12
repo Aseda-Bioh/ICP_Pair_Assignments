@@ -2,7 +2,7 @@
 #include "Account.h"
 using namespace std;
 
-class CheckingAccount: public BankAccount
+class CheckingAccount: public Account
 {
 private:
     double transactionFee;
