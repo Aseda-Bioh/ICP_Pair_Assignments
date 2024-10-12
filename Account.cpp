@@ -14,18 +14,29 @@ Account::Account(int accountNumber, string firstName, string lastName, string do
     }
 }
 
-void Account::credit(double amount) {
-    balance += amount;
+bool Account::credit(double amount) {
+    if (amount <= 0)
+    {
+        cout << "Invalid amount.";
+        return false;
+    }
+    
+    else {
+        balance += amount;
+        return true;
+    }
 }
 
-void Account::debit(double amount) {
+bool Account::debit(double amount) {
     if (amount > balance)
     {
         cout << "You do not have enough funds for this transaction.";
+        return false;
     }
 
     else {
         balance -= amount;
+        return true;
     }
 }
 
