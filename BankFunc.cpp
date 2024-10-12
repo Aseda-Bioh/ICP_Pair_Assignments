@@ -1,4 +1,4 @@
-#include "BankSystem.h"
+#include "BankFunc.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>

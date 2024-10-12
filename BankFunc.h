@@ -9,7 +9,7 @@ private:
     int accountCount;
 
 public:
-    BankSystem();
+    BankFunc();
     void addAccount(Account* account);
     void updateAccount(const std::string& accountNumber, double amount, bool isCredit);
     void generateReport(const std::string& startDate, const std::string& endDate);
