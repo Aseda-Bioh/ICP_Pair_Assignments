@@ -1,5 +1,5 @@
 #include<iostream>
-#include "BankAccount.h"
+#include "Account.h"
 using namespace std;
 
 class CheckingAccount: public BankAccount
