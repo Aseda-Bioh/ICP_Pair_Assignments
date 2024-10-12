@@ -7,8 +7,12 @@ CheckingAccount::CheckingAccount(int accountNumber, string accountHolder, double
 }
 
 void CheckingAccount::deposit(double amount) {
-    BankAccount::deposit(amount);
-    BankAccount::withdraw(transactionFee);
+    Account::deposit(amount);
+    if (Account::withdraw(transactionFee)) {
+        std::cout << "Transaction fee of Ghc" << transactionFee << " charged." << std::endl;
+    } else {
+        std::cout << "Unable to charge transaction fee. Insufficient funds." << std::endl;
+    }
 }
 
 void CheckingAccount::withdraw(double amount) {
