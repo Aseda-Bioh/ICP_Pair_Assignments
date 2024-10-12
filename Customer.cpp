@@ -2,7 +2,7 @@
 #include "Customer.h"
 using namespace std;
 
-Customer::Customer(int accountNumber, string firstName, string lastName, string dob, string gender, string address, int phoneContact, string email) {
+Customer::Customer(string accountNumber, string firstName, string lastName, string dob, string gender, string address, string phoneContact, string email) {
     this -> accountNumber = accountNumber;
     this ->firstName = firstName;
     this ->lastName = lastName;
@@ -13,7 +13,7 @@ Customer::Customer(int accountNumber, string firstName, string lastName, string 
     this ->email = email;
 }
 
-void Customer::setCustomerDetails(int accountNumber, string firstName, string lastName, string dob, string gender, string address, int phoneContact, string email) {
+void Customer::setCustomerDetails(string accountNumber, string firstName, string lastName, string dob, string gender, string address, string phoneContact, string email) {
     this -> accountNumber = accountNumber;
     this ->firstName = firstName;
     this ->lastName = lastName;
@@ -24,7 +24,7 @@ void Customer::setCustomerDetails(int accountNumber, string firstName, string la
     this ->email = email;
 }
 
-void Customer::setAccountNumber(int accountNumber) {
+void Customer::setAccountNumber(string accountNumber) {
     this ->accountNumber = accountNumber;
 }
 
@@ -48,7 +48,7 @@ void Customer::setAddress(string address) {
     this ->address = address;
 }
 
-void Customer::setPhoneContact(int phoneContact) {
+void Customer::setPhoneContact(string phoneContact) {
     this ->phoneContact = phoneContact;
 }
 
@@ -56,7 +56,7 @@ void Customer::setEmail(string email) {
     this ->email = email;
 }
 
-int Customer::getAccountNumber() {
+string Customer::getAccountNumber() {
     return accountNumber;
 }
 
@@ -80,7 +80,7 @@ string Customer::getAddress() {
     return address;
 }
 
-int Customer::getPhoneContact() {
+string Customer::getPhoneContact() {
     return phoneContact;
 }
 

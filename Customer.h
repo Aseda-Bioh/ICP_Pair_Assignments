@@ -3,32 +3,32 @@ using namespace std;
 
 class Customer {
 private:
-    int accountNumber;
+    string accountNumber;
     string firstName;
     string lastName;
     string dob;
     string gender;
     string address;
-    int phoneContact;
+    string phoneContact;
     string email;
 public:
-    Customer(int accountNumber, string firstName, string lastName, string dob, string gender, string address, int phoneContact, string email);
-    void setCustomerDetails(int accountNumber, string firstName, string lastName, string dob, string gender, string address, int phoneContact, string email);
-    void setAccountNumber(int accountNumber);
+    Customer(string accountNumber, string firstName, string lastName, string dob, string gender, string address, string phoneContact, string email);
+    void setCustomerDetails(string accountNumber, string firstName, string lastName, string dob, string gender, string address,string phoneContact, string email);
+    void setAccountNumber(string accountNumber);
     void setFirstName(string fname);
     void setLastName(string lname);
     void setDOB(string dob);
     void setGender(string gender);
     void setAddress(string address);
-    void setPhoneContact(int phoneContact);
+    void setPhoneContact(string phoneContact);
     void setEmail(string email);
-    int getAccountNumber();
+    string getAccountNumber();
     string getFirstName();
     string getLastName();
     string getDOB();
     string getGender();
     string getAddress();
-    int getPhoneContact();
+    string getPhoneContact();
     string getEmail();
 };
 
