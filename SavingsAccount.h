@@ -1,16 +1,15 @@
 #include<iostream>
-#include "BankAccount.h"
+#include "Account.h"
 #ifndef SAVINGSACCOUNT.H
 #define SAVINGSACCOUNT.H
 using namespace std;
 
-class SavingsAccount: public BankAccount {
+class SavingsAccount: public Account {
 private:
     float interestRate;
-    int interestTimePeriod;
 
 public:
-    SavingsAccount(int accountNumber, string accountHolder, double balance, float interestRate, int interestTimePeriod);
-    void interestEarned();
+    SavingsAccount(int accountNumber, string firstName, string lastName, string dob, string gender, string address, int phoneContact, string email, double balance, float interestRate);
+    void calculateInterest();
 };
 #endif
