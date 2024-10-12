@@ -6,7 +6,7 @@ CheckingAccount::CheckingAccount(int accountNumber, string accountHolder, double
     this -> transactionFee = transactionFee;
 }
 
-void CheckingAccount::deposit(double amount) {
+void CheckingAccount::credit(double amount) {
     Account::credit(amount);
     if (Account::debit(transactionFee)) {
         std::cout << "Transaction fee of Ghc" << transactionFee << " charged." << std::endl;
@@ -15,7 +15,7 @@ void CheckingAccount::deposit(double amount) {
     }
 }
 
-void CheckingAccount::withdraw(double amount) {
+void CheckingAccount::debit(double amount) {
     if (getBalance() - amount >= 0)
     {
         Account::debit(amount);
