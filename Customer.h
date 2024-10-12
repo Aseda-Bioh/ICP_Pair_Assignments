@@ -1,4 +1,6 @@
 #include<iostream>
+#ifndef CUSTOMER_H
+#define CUSTOMER_H
 using namespace std;
 
 class Customer {
@@ -31,4 +33,4 @@ public:
     string getPhoneContact();
     string getEmail();
 };
-
+#endif

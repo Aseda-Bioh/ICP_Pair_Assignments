@@ -10,23 +10,22 @@ CheckingAccount::CheckingAccount(string accountNumber, string firstName, string 
 
 void CheckingAccount::credit(double amount) {
     Account::credit(amount);
-
-    if (Account::debit(transactionFee)) {
-        std::cout << "Transaction fee of Ghc" << transactionFee << " charged." << std::endl;
-    } else {
-        std::cout << "Unable to charge transaction fee. Insufficient funds." << std::endl;
-    }
+    Account::debit(transactionFee);
 }
 
 void CheckingAccount::debit(double amount) {
     if (amount > getBalance())
     {
-        Account::debit(amount);
-        Account::debit(transactionFee);
+        cout << "You do not have enough funds.";
     }
 
     else {
-        cout << "You do not have enough funds.";
+        Account::debit(amount);
+        Account::debit(transactionFee);
     }
+}
+
+double CheckingAccount::getTransactionFee() {
+    return transactionFee;
 }
 #endif

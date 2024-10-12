@@ -11,8 +11,8 @@ private:
 
 public:
     Account(string accountNumber, string firstName, string lastName, string dob, string gender, string address, string phoneContact, string email,double balance);
-    bool credit(double amount);
-    bool debit(double amount);
+    void credit(double amount);
+    void debit(double amount);
     double getBalance();
 };
 #endif
