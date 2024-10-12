@@ -9,6 +9,6 @@ private:
 
 public:
     CheckingAccount(int accountNumber, string accountHolder, double balance, double transactionFee);
-    void deposit(double amount);
-    void withdraw(double amount);
+    void credit(double amount);
+    void debit(double amount);
 };
