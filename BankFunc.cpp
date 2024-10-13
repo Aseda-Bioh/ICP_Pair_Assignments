@@ -4,6 +4,7 @@
 #include <sstream>
 #include <chrono>
 #include <iomanip>
+#include <set>
 
 BankFunc::BankFunc() : accountCount(0) {}
 
@@ -56,6 +57,8 @@ void BankFunc::generateReport(const std::string& startDate, const std::string& e
         
         std::ifstream file("transactions.txt");
         std::string line;
+        std::set<std::string> printedTransactions; // To keep track of printed transactions
+
         while (std::getline(file, line)) {
             std::istringstream iss(line);
             std::string accNum, amount, type, date;
@@ -65,11 +68,18 @@ void BankFunc::generateReport(const std::string& startDate, const std::string& e
             std::getline(iss, date);
             
             if (accNum == accounts[i]->getAccountNumber() && date >= startDate && date <= endDate) {
-                std::cout << "  " << type << ": Ghc" << amount << " on " << date;
+                // Create a unique key for this transaction
+                std::string transactionKey = accNum + amount + type + date;
+                
+                // Only print if we haven't printed this transaction before
+                if (printedTransactions.find(transactionKey) == printedTransactions.end()) {
+                    std::cout << "  " << type << ": Ghc" << amount << " on " << date << "\n";
+                    printedTransactions.insert(transactionKey);
+                }
             }
         }
         file.close();
-        std::cout << "\n\n";
+        std::cout << "\n";
     }
 }
 
