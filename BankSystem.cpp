@@ -4,6 +4,7 @@
 #include <fstream>
 #include "SavingsAccount.h"
 #include "CheckingAccount.h"
+#include "BankFunc.h"
 #ifndef BANKSYSTEM_CPP
 #define BANKSYSTEM_CPP
 using namespace std;
@@ -17,7 +18,8 @@ int main(){
   string transactionFile = "transactions.txt";
 
   Customer customer1("04245648299934", "Joseph", "Chuku", "1980-08-18","Male", "WR-899-213", "05040209912", "chuku@gmail.com");
-  Account account("04245648299934", "Joseph", "Chuku", "1980-08-18","Male", "WR-899-213", "05040209912", "chuku@gmail.com", 5000.00);
+  Account account1("04245648299934", "Joseph", "Chuku", "1980-08-18","Male", "WR-899-213", "05040209912", "chuku@gmail.com", 5000.00);
+  Account account2("01277924000923", "Hazel", "Holloway", "2003-12-03","Female", "AR-012-670", "02022188847", "holloway@gmail.com", 50000.00);
   SavingsAccount savingsAccount("04245648299934","Joseph", "Chuku", "1980-08-18","Male", "WR-899-213", "05040209912", "chuku@gmail.com", 10000.00, 0.05);
   CheckingAccount checkingAccount("04245648299934","Joseph", "Chuku", "1980-08-18","Male", "WR-899-213", "05040209912", "chuku@gmail.com", 8000.00, 5.00);
 
@@ -50,6 +52,7 @@ int main(){
   cout << "After debiting, your new balance is " << account.getBalance();
   */
 
+  /*
   double interest = savingsAccount.calculateInterest();
   savingsAccount.credit(interest);
 
@@ -61,6 +64,14 @@ int main(){
 
   checkingAccount.debit(300.00);
 
-  cout << "Your account was debited. You were charged Ghc " << checkingAccount.getTransactionFee() << " for this transaction, and your new balance is Ghc " << checkingAccount.getBalance() <<endl; 
+  cout << "Your account was debited. You were charged Ghc " << checkingAccount.getTransactionFee() << " for this transaction, and your new balance is Ghc " << checkingAccount.getBalance() <<endl;
+  */
+
+  BankFunc func;
+  func.addAccount(&account1);
+  func.addAccount(&account2);
+
+  func.updateAccount("04245648299934", 5000.00, true);
+  func.generateReport("2024-10-13", "2024-10-13"); 
 }
 #endif

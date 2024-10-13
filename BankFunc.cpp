@@ -2,7 +2,8 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include <ctime>
+#include <chrono>
+#include <iomanip>
 
 BankFunc::BankFunc() : accountCount(0) {}
 
@@ -28,10 +29,14 @@ void BankFunc::updateAccount(const std::string& accountNumber, double amount, bo
             // Save transaction
             std::ofstream transactionFile("transactions.txt", std::ios::app);
             if (transactionFile.is_open()) {
-                time_t now = time(0);
-                char* dt = ctime(&now);
+                auto time = std::chrono::system_clock::now();
+                auto in_time_t = std::chrono::system_clock::to_time_t(time);
+
+                std::stringstream ss;
+                ss << std::put_time(std::localtime(&in_time_t), "%Y-%m-%d");
+
                 transactionFile << accountNumber << "," << amount << "," 
-                                << (isCredit ? "Credit" : "Debit") << "," << dt;
+                                << (isCredit ? "Credit" : "Debit") << "," << ss.str() <<endl;
                 transactionFile.close();
             }
             break;
@@ -46,7 +51,7 @@ void BankFunc::generateReport(const std::string& startDate, const std::string& e
     for (int i = 0; i < accountCount; i++) {
         std::cout << "Account Number: " << accounts[i]->getAccountNumber() << "\n";
         std::cout << "Name: " << accounts[i]->getFirstName() << " " << accounts[i]->getLastName() << "\n";
-        std::cout << "Balance: $" << accounts[i]->getBalance() << "\n";
+        std::cout << "Balance: Ghc" << accounts[i]->getBalance() << "\n";
         std::cout << "Transactions:\n";
         
         std::ifstream file("transactions.txt");
@@ -60,7 +65,7 @@ void BankFunc::generateReport(const std::string& startDate, const std::string& e
             std::getline(iss, date);
             
             if (accNum == accounts[i]->getAccountNumber() && date >= startDate && date <= endDate) {
-                std::cout << "  " << type << ": $" << amount << " on " << date;
+                std::cout << "  " << type << ": Ghc" << amount << " on " << date;
             }
         }
         file.close();
