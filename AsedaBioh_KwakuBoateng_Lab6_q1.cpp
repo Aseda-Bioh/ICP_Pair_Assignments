@@ -1,3 +1,8 @@
+/*
+* Lab 6, 
+* Nana Kwaku A. Ampadu-Boateng & Nana Kwabena Aseda Bioh 
+*/
+
 #include<iostream>
 #include<fstream>
 #include<vector>
